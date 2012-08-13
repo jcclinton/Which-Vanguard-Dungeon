@@ -48,15 +48,29 @@
 			this.lowEl = $('#low-value', '#input');
 			this.highEl = $('#high-value', '#input');
 			this.targetEl = $('#target-value', '#input');
+
+			this.scopeEl = $('#scope_filter');
 		},
 
 		render: function(){
 			var data = {}
+				, scope
+				, scopeTypes
 				;
 
 			data.low = this.low;
 			data.target = this.target;
 			data.high = this.high;
+
+
+			scopeTypes = ['Any', 'Solo', 'Small Group', 'Group', 'Raid'];
+
+			_.each(scopeTypes, function(type){
+				scope += '<option value="'+type+'">'+type+'</option>';
+			});
+			scope = '<select name="scope_filter" id="scope_filter">'+scope+'</select>';
+
+			data.scopeDropdown = scope;
 
 
 			$(this.el).html(this.template(data));
@@ -91,13 +105,27 @@
 		},
 
 		getApplicableList: function( input ){
+			var scope
+				, list = []
+				;
+
 			if(input.target){
-				return searchByTarget(input.target);
+				list = searchByTarget(input.target);
 			}else if(input.high && input.low){
-				return searchByRange(input.high, input.low);
+				list = searchByRange(input.high, input.low);
 			}
 
-			return [];
+			scope = this.scopeEl.val();
+
+			if( scope  && scope !== 'Any'){
+				list = _.filter(list, function(val, key){
+					console.log(val.Scope);
+					console.log(scope);
+					return val.Scope.toLowerCase() === scope.toLowerCase();
+				});
+			}
+
+			return list;
 		},
 
 		renderList: function(list){
