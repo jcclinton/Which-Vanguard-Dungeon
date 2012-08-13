@@ -39,6 +39,9 @@
 			this.high = '';
 			this.target = 15;
 
+			this.resultsEl = $('#result');
+			this.listTemplate = _.template( $('#list-results').html() );
+
 			this.template = _.template( html );
 			this.render();
 
@@ -57,6 +60,7 @@
 
 
 			$(this.el).html(this.template(data));
+			this.renderList([]);
 			return this;
 		},
 		
@@ -66,14 +70,14 @@
 				, low = this.lowEl.val() | 0
 				;
 
-			if(target){
+			if(target && target > 0){
 				this.targetEl.val( target );
 				this.highEl.val( '' );
 				this.lowEl.val( '' );
 				return {target: target};
 			}
 
-			if( !high || !low){
+			if( !high || !low || high <= 0 || low <= 0){
 				return false;
 			}
 
@@ -94,6 +98,16 @@
 		},
 
 		renderList: function(list){
+			this.resultsEl.empty();
+
+			_.each(list, function(val, key){
+				var data = {}
+					;
+
+				data.name = val['Dungeon Name'];
+
+				this.resultsEl.append( this.listTemplate(data) );
+			}, this);
 		},
 
 		random: function(){

@@ -51,9 +51,9 @@
       <p>Choose parameters below to get your answer!</p>
       <p>(target level has precedence if you put a number in that field)</p>
 
-			<div id="input"></div>
+			<div id="input" class="row"></div>
 
-			<div id="result"></div>
+			<div id="result" class="row"></div>
 
     </div> <!-- /container -->
 
@@ -79,6 +79,11 @@
 		<button type="button" class="find-dungeon">Choose Random</button>
 		<button type="button" class="list-dungeons">Show Available</button>
 		<div style="clear:both"></div>
+	</script>
+
+
+	<script type="text/template" id="list-results">
+		<h3><%= name %></h3>
 	</script>
 
 
