@@ -180,9 +180,9 @@ var dungeonList = [
     "Scope": "Group"
   },
   {
-    "Low": "10",
-    "High": "14",
-    "Avg": "12",
+    "Low": "26",
+    "High": "30",
+    "Avg": "28",
     "Dungeon Name": "Jade Depths",
     "Chunk Name": "Veskal's Exchange",
     "Continent": "Thestra",
@@ -270,9 +270,9 @@ var dungeonList = [
     "Scope": "Group"
   },
   {
-    "Low": "14",
-    "High": "18",
-    "Avg": "16",
+    "Low": "27",
+    "High": "32",
+    "Avg": "29",
     "Dungeon Name": "Achatlan Lair",
     "Chunk Name": "Veskal's Exchange",
     "Continent": "Thestra",
@@ -324,18 +324,18 @@ var dungeonList = [
     "Scope": "Solo"
   },
   {
-    "Low": "16",
-    "High": "22",
-    "Avg": "19",
+    "Low": "24",
+    "High": "30",
+    "Avg": "27",
     "Dungeon Name": "Temple of Dailuk",
     "Chunk Name": "Temple of Dailuk",
     "Continent": "Qalia",
     "Scope": "Group"
   },
   {
-    "Low": "16",
-    "High": "22",
-    "Avg": "19",
+    "Low": "30",
+    "High": "35",
+    "Avg": "33",
     "Dungeon Name": "Fallen Lyceum of Ingolas",
     "Chunk Name": "Kaon's Rush",
     "Continent": "Thestra",
@@ -387,9 +387,9 @@ var dungeonList = [
     "Scope": "Group"
   },
   {
-    "Low": "18",
-    "High": "24",
-    "Avg": "21",
+    "Low": "23",
+    "High": "28",
+    "Avg": "26",
     "Dungeon Name": "Hilsbury Manor",
     "Chunk Name": "Misthaven Crossing",
     "Continent": "Thestra",
