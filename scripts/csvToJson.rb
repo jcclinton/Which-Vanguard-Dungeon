@@ -10,12 +10,21 @@ end
 
 csv = CSV.read "dungeons.csv"
 headers = cleanRow csv.shift
-#puts headers
+
+output = Array.new
 
 csv.each do |row|
 	row = cleanRow row
+	hash = Hash.new
+	i = 0
 	row.each do |column|
-		#puts column
+		hash[headers[i]] = column
+		i = i + 1
 	end
-	#puts "\n"
+	output.push hash
 end
+
+#puts JSON.pretty_generate output
+f = File.open 'dungeons.json', 'w'
+f.write "var dungeonList = #{JSON.pretty_generate output};\n"
+f.close

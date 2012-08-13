@@ -1,0 +1,767 @@
+var dungeonList = [
+  {
+    "Low": "4",
+    "High": "7",
+    "Avg": "6",
+    "Dungeon Name": "Glade of the Lost",
+    "Chunk Name": "Ca'ial Brael",
+    "Continent": "Kojan",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "4",
+    "High": "8",
+    "Avg": "6",
+    "Dungeon Name": "Rindol Storehouse",
+    "Chunk Name": "Tursh Village",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "5",
+    "High": "6",
+    "Avg": "6",
+    "Dungeon Name": "Rille's Strike",
+    "Chunk Name": "Bordinar's Cleft",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "6",
+    "High": "7",
+    "Avg": "7",
+    "Dungeon Name": "Fanx Caverns",
+    "Chunk Name": "Martok",
+    "Continent": "Kojan",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "5",
+    "High": "9",
+    "Avg": "7",
+    "Dungeon Name": "Rockspine Lair",
+    "Chunk Name": "Pankor Zhi",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "8",
+    "High": "8",
+    "Avg": "8",
+    "Dungeon Name": "Gwartok Stronghold",
+    "Chunk Name": "Bordinar's Cleft",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "6",
+    "High": "10",
+    "Avg": "8",
+    "Dungeon Name": "Arks of Harmony",
+    "Chunk Name": "Jalen's Crossing",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "8",
+    "High": "9",
+    "Avg": "9",
+    "Dungeon Name": "Coppermend's Delving",
+    "Chunk Name": "Bordinar's Cleft",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "7",
+    "High": "11",
+    "Avg": "9",
+    "Dungeon Name": "Ksaravi Hollow",
+    "Chunk Name": "Khal",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "7",
+    "High": "11",
+    "Avg": "9",
+    "Dungeon Name": "Library of Mekalia",
+    "Chunk Name": "Mekalia",
+    "Continent": "Qalia",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "7",
+    "High": "11",
+    "Avg": "9",
+    "Dungeon Name": "Bloodhowler Cave",
+    "Chunk Name": "Dahknarg",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "9",
+    "High": "10",
+    "Avg": "10",
+    "Dungeon Name": "Oathbreaker Depths Mine",
+    "Chunk Name": "Bordinar's Cleft",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "8",
+    "High": "11",
+    "Avg": "10",
+    "Dungeon Name": "Ra'Jin Stronghold",
+    "Chunk Name": "Tanvu",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "8",
+    "High": "11",
+    "Avg": "10",
+    "Dungeon Name": "The Serpent of Sihari",
+    "Chunk Name": "Lomshir",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "7",
+    "High": "12",
+    "Avg": "10",
+    "Dungeon Name": "Arcanium",
+    "Chunk Name": "Leth Nurae",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "9",
+    "High": "12",
+    "Avg": "11",
+    "Dungeon Name": "Lair of the Green Witch",
+    "Chunk Name": "Lomshir Plain",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "9",
+    "High": "12",
+    "Avg": "11",
+    "Dungeon Name": "Aeokor Zhi",
+    "Chunk Name": "Hathor Zhi",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "12",
+    "Avg": "11",
+    "Dungeon Name": "Orcbane Mine",
+    "Chunk Name": "Vault of Heroes",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "13",
+    "Avg": "12",
+    "Dungeon Name": "Wailing Winds Asylum",
+    "Chunk Name": "Blighted Lands",
+    "Continent": "Kojan",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "8",
+    "High": "15",
+    "Avg": "12",
+    "Dungeon Name": "Riftseeker's Torrent",
+    "Chunk Name": "Tursh Village",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "14",
+    "Avg": "12",
+    "Dungeon Name": "Jade Depths",
+    "Chunk Name": "Veskal's Exchange",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "10",
+    "High": "14",
+    "Avg": "12",
+    "Dungeon Name": "Cave of the Urugog",
+    "Chunk Name": "Vault of Heroes",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "15",
+    "Avg": "13",
+    "Dungeon Name": "Azebaj Hive",
+    "Chunk Name": "Qa Riverbank",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "15",
+    "Avg": "13",
+    "Dungeon Name": "Vault of Heroes",
+    "Chunk Name": "Vault of Heroes",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "10",
+    "High": "16",
+    "Avg": "13",
+    "Dungeon Name": "Gardens of Xia'Liu",
+    "Chunk Name": "Wildgrowth Forest",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "12",
+    "High": "16",
+    "Avg": "14",
+    "Dungeon Name": "Haekemesh's Excavation",
+    "Chunk Name": "Lomshir Plain",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "12",
+    "High": "16",
+    "Avg": "14",
+    "Dungeon Name": "Caverns of Noztgha",
+    "Chunk Name": "Temple of Dailuk",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "12",
+    "High": "16",
+    "Avg": "14",
+    "Dungeon Name": "Karrus Fahrel",
+    "Chunk Name": "Jharru Flats",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "11",
+    "High": "18",
+    "Avg": "15",
+    "Dungeon Name": "Magi Hold",
+    "Chunk Name": "Magi Hold",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "12",
+    "High": "19",
+    "Avg": "16",
+    "Dungeon Name": "Khegor's End",
+    "Chunk Name": "Three Rivers Village",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "14",
+    "High": "18",
+    "Avg": "16",
+    "Dungeon Name": "Achatlan Lair",
+    "Chunk Name": "Veskal's Exchange",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "14",
+    "High": "19",
+    "Avg": "16",
+    "Dungeon Name": "Gulgrethor Fortress",
+    "Chunk Name": "Sundering Wastelands",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "15",
+    "High": "18",
+    "Avg": "17",
+    "Dungeon Name": "Stonesmasher Enclave",
+    "Chunk Name": "Three Rivers Village",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "15",
+    "High": "20",
+    "Avg": "18",
+    "Dungeon Name": "Ksaravi Gulch",
+    "Chunk Name": "Ksaravi Gulch",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "16",
+    "High": "20",
+    "Avg": "18",
+    "Dungeon Name": "Chrysol Mines",
+    "Chunk Name": "Tauthien Delta",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "17",
+    "High": "17",
+    "Avg": "17",
+    "Dungeon Name": "Misthaven Mines",
+    "Chunk Name": "Misthaven Crossing",
+    "Continent": "Thestra",
+    "Scope": "Solo"
+  },
+  {
+    "Low": "16",
+    "High": "22",
+    "Avg": "19",
+    "Dungeon Name": "Temple of Dailuk",
+    "Chunk Name": "Temple of Dailuk",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "16",
+    "High": "22",
+    "Avg": "19",
+    "Dungeon Name": "Fallen Lyceum of Ingolas",
+    "Chunk Name": "Kaon's Rush",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "17",
+    "High": "22",
+    "Avg": "20",
+    "Dungeon Name": "Cairnworth Hall",
+    "Chunk Name": "Silverlake",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "18",
+    "High": "22",
+    "Avg": "20",
+    "Dungeon Name": "Tharridon's Scar",
+    "Chunk Name": "Renton Keep",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "18",
+    "High": "22",
+    "Avg": "20",
+    "Dungeon Name": "Tomb of Lord Tsang",
+    "Chunk Name": "Tomb of Lord Tsang",
+    "Continent": "Kojan",
+    "Scope": "Group"
+  },
+  {
+    "Low": "18",
+    "High": "23",
+    "Avg": "21",
+    "Dungeon Name": "Kalendra's Coven",
+    "Chunk Name": "Skrilien Point",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "18",
+    "High": "23",
+    "Avg": "21",
+    "Dungeon Name": "Imanjal Sacellum",
+    "Chunk Name": "Skrilien Point",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "18",
+    "High": "24",
+    "Avg": "21",
+    "Dungeon Name": "Hilsbury Manor",
+    "Chunk Name": "Misthaven Crossing",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "21",
+    "High": "24",
+    "Avg": "23",
+    "Dungeon Name": "Hold of Intangibility",
+    "Chunk Name": "Shoreline Ruins",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "20",
+    "High": "25",
+    "Avg": "23",
+    "Dungeon Name": "Remains of Castle Landsview",
+    "Chunk Name": "Coastal Graveyard",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "20",
+    "High": "25",
+    "Avg": "23",
+    "Dungeon Name": "Mound of the Zihurr",
+    "Chunk Name": "Renton Keep",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "20",
+    "High": "26",
+    "Avg": "23",
+    "Dungeon Name": "Skawlra Rock",
+    "Chunk Name": "Skawlra Rock",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "22",
+    "High": "25",
+    "Avg": "24",
+    "Dungeon Name": "Imanjal Tower",
+    "Chunk Name": "Skrilien Point",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "21",
+    "High": "26",
+    "Avg": "24",
+    "Dungeon Name": "Grotto of the Sea Hags",
+    "Chunk Name": "Hag's Coastline",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "22",
+    "High": "25",
+    "Avg": "24",
+    "Dungeon Name": "Infineum Plateau",
+    "Chunk Name": "Coterie Infineum Sanctuary",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "23",
+    "High": "27",
+    "Avg": "25",
+    "Dungeon Name": "Ssre'vessk",
+    "Chunk Name": "Strand of the Ancients",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "22",
+    "High": "30",
+    "Avg": "26",
+    "Dungeon Name": "Ruins of Trengal Keep",
+    "Chunk Name": "Ruins of Trengal Keep",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "25",
+    "High": "30",
+    "Avg": "28",
+    "Dungeon Name": "Coterie Infineum Sanctuary",
+    "Chunk Name": "Coterie Infineum Sanctuary",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "26",
+    "High": "30",
+    "Avg": "28",
+    "Dungeon Name": "Falgarholm",
+    "Chunk Name": "Falgarholm",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "29",
+    "High": "32",
+    "Avg": "31",
+    "Dungeon Name": "Volaran Towers",
+    "Chunk Name": "River Valley",
+    "Continent": "Qalia",
+    "Scope": "Small Group"
+  },
+  {
+    "Low": "31",
+    "High": "32",
+    "Avg": "32",
+    "Dungeon Name": "Red Sparrow Depths",
+    "Chunk Name": "Southwatch",
+    "Continent": "Thestra",
+    "Scope": "Small Group"
+  },
+  {
+    "Low": "29",
+    "High": "34",
+    "Avg": "32",
+    "Dungeon Name": "Velkatik's Hollow",
+    "Chunk Name": "Qa Riverbank",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "31",
+    "High": "34",
+    "Avg": "33",
+    "Dungeon Name": "Zossyr Hakrel",
+    "Chunk Name": "Zossyr Hakrel",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "30",
+    "High": "35",
+    "Avg": "33",
+    "Dungeon Name": "Fallen Temple of Vol Tuniel",
+    "Chunk Name": "Ruins of Vol Tuniel",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "30",
+    "High": "36",
+    "Avg": "33",
+    "Dungeon Name": "Dark Eye Hold",
+    "Chunk Name": "Northern Highlands",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "33",
+    "High": "37",
+    "Avg": "35",
+    "Dungeon Name": "Vorkellix Hold",
+    "Chunk Name": "Cragwind Ridge",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "34",
+    "High": "36",
+    "Avg": "35",
+    "Dungeon Name": "Karrus Alljur",
+    "Chunk Name": "Karrus Hakrel",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "34",
+    "High": "36",
+    "Avg": "35",
+    "Dungeon Name": "Karrus Ennir",
+    "Chunk Name": "Karrus Hakrel",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "34",
+    "High": "41",
+    "Avg": "38",
+    "Dungeon Name": "River Palace",
+    "Chunk Name": "River Palace",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "35",
+    "High": "40",
+    "Avg": "38",
+    "Dungeon Name": "Spire of the Decakin",
+    "Chunk Name": "Spires Keep",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "35",
+    "High": "40",
+    "Avg": "38",
+    "Dungeon Name": "Thelaseen",
+    "Chunk Name": "Thelaseen",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "33",
+    "High": "44",
+    "Avg": "39",
+    "Dungeon Name": "Dargun's Tomb",
+    "Chunk Name": "Dargun's Tomb",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "36",
+    "High": "41",
+    "Avg": "39",
+    "Dungeon Name": "Karrus Hakrel",
+    "Chunk Name": "Karrus Hakrel",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "37",
+    "High": "41",
+    "Avg": "39",
+    "Dungeon Name": "Lair of the Vi'Rak",
+    "Chunk Name": "Ruins of Vol Tuniel",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "38",
+    "High": "44",
+    "Avg": "41",
+    "Dungeon Name": "Island of Madness - Small",
+    "Chunk Name": "Islands of Madness",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "38",
+    "High": "44",
+    "Avg": "41",
+    "Dungeon Name": "Island of Madness - Large",
+    "Chunk Name": "Stranglewater Shore",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "39",
+    "High": "44",
+    "Avg": "42",
+    "Dungeon Name": "Greystone",
+    "Chunk Name": "Beranid Hills",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "39",
+    "High": "45",
+    "Avg": "42",
+    "Dungeon Name": "Rakshasa Citadel",
+    "Chunk Name": "Sunset Pointe",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "40",
+    "High": "45",
+    "Avg": "43",
+    "Dungeon Name": "Trickster's Haven",
+    "Chunk Name": "Razad",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "38",
+    "High": "48",
+    "Avg": "43",
+    "Dungeon Name": "Vault of the Hidden",
+    "Chunk Name": "Jathred's Twist",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "41",
+    "High": "45",
+    "Avg": "43",
+    "Dungeon Name": "Velerium Mines",
+    "Chunk Name": "Lost Canyon",
+    "Continent": "Thestra",
+    "Scope": "Small Group"
+  },
+  {
+    "Low": "43",
+    "High": "45",
+    "Avg": "44",
+    "Dungeon Name": "Xennumet",
+    "Chunk Name": "Mind's Crown",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "43",
+    "High": "50",
+    "Avg": "47",
+    "Dungeon Name": "Rahz Inkur",
+    "Chunk Name": "Rahz Inkur",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "45",
+    "High": "50",
+    "Avg": "48",
+    "Dungeon Name": "Nusibe Necropolis",
+    "Chunk Name": "Nusibe Necropolis",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "45",
+    "High": "50",
+    "Avg": "48",
+    "Dungeon Name": "Temple of Tehatamani",
+    "Chunk Name": "Temple of Tehatamani",
+    "Continent": "Qalia",
+    "Scope": "Group"
+  },
+  {
+    "Low": "45",
+    "High": "50",
+    "Avg": "48",
+    "Dungeon Name": "Old Targonor",
+    "Chunk Name": "Old Targonor",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "45",
+    "High": "50",
+    "Avg": "48",
+    "Dungeon Name": "Mnalus Lair",
+    "Chunk Name": "Swamps of Rumug",
+    "Continent": "Thestra",
+    "Scope": "Group"
+  },
+  {
+    "Low": "50",
+    "High": "53",
+    "Avg": "52",
+    "Dungeon Name": "Ancient Port Warehouse",
+    "Chunk Name": "Innovus",
+    "Continent": "Thestra",
+    "Scope": "Raid"
+  },
+  {
+    "Low": "50",
+    "High": "55",
+    "Avg": "53",
+    "Dungeon Name": "Pantheon of the Ancients",
+    "Chunk Name": "Strand of the Ancients",
+    "Continent": "Qalia",
+    "Scope": "Raid"
+  }
+];
