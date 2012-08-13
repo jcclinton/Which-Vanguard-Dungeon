@@ -37,7 +37,7 @@
           <a class="brand" href="#">Which Vanguard Dungeon Should We Run?</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <!--li class="active"><a href="#">Home</a></li-->
               <!--li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li-->
             </ul>
@@ -47,10 +47,6 @@
     </div>
 
     <div class="container">
-
-      <p>Choose parameters below to get your answer!</p>
-      <p>(target level has precedence if you put a number in that field)</p>
-
 			<div id="input" class="row"></div>
 
 			<div id="result" class="row"></div>
@@ -68,35 +64,43 @@
 	<!-- Templates -->
 
 	<script type="text/template" id="select-template">
-		<input type="text" id="target-value" value="<%= target %>" />
-		<span>Target Level</span>
-		<br/>
+		<div class="row">
+			<div class="span4">
+				<input type="text" id="target-value" value="<%= target %>" />
+				<span>Target Level</span>
+				<br/>
+				<span>(Target level must be empty to use high/low bound)</span>
+			</div>
+			<div class="span1">
+				OR:
+			</div>
+			<div class="span4">
+				<input type="text" id="high-value" value="<%= high %>" />
+				<span>High Bound on Level</span>
+				<br/>
+				<input type="text" id="low-value" value="<%= low %>" />
+				<span>Lower Bound on Level</span>
+			</div>
+		</div>
+		<hr/>
 
-		OR:
-
-		<br/>
-
-		<input type="text" id="high-value" value="<%= high %>" />
-		<span>High Bound on Level</span>
-		<br/>
-
-		<input type="text" id="low-value" value="<%= low %>" />
-		<span>Lower Bound on Level</span>
-		<br/>
-
-		<div id='scope-dropdown'>
+		<div style="margin-top: 20px" id='scope-dropdown'>
 			<%= scopeDropdown %>
 			<span>Dungeon Scope</span>
 		</div>
 
-		<button type="button" class="find-dungeon">Choose Random</button>
-		<button type="button" class="list-dungeons">Show Available</button>
+		<div style="margin: 20px 0px">
+			<button type="button" class="find-dungeon">Choose Random</button>
+			<button type="button" class="list-dungeons">Show Available</button>
+		</div>
 		<div style="clear:both"></div>
 	</script>
 
 
 	<script type="text/template" id="list-results">
 		<div style="margin-top: 20px">
+			<hr/>
+
 			<h3><%= dungeonname %></h3>
 			<br/>
 
@@ -108,7 +112,6 @@
 
 			Scope: <%= scope %>
 
-			<hr/>
 		</div>
 	</script>
 

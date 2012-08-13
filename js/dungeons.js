@@ -37,7 +37,7 @@
 
 			this.low = '';
 			this.high = '';
-			this.target = 15;
+			this.target = '';
 
 			this.resultsEl = $('#result');
 			this.listTemplate = _.template( $('#list-results').html() );
