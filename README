@@ -1,1 +1,3 @@
-Webpage to randomlly determine which dungeon you should run for Vanguard: Saga of Heroes
+Webpage to randomly determine which dungeon you should run for Vanguard: Saga of Heroes
+
+To change dungeon values, edit dungeon.json. (dungeon.csv was originally pulled from dungeonguru.net and is no longer used)
