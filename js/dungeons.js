@@ -78,6 +78,9 @@
 			}
 
 			if( !high || !low || high <= 0 || low <= 0){
+				this.targetEl.val( '' );
+				this.highEl.val( '' );
+				this.lowEl.val( '' );
 				return false;
 			}
 
@@ -101,10 +104,14 @@
 			this.resultsEl.empty();
 
 			_.each(list, function(val, key){
-				var data = {}
-					;
+				var data = {};
 
-				data.name = val['Dungeon Name'];
+				_.each(val, function(v, k){
+					var newKey;
+
+					newKey = k.toLowerCase().replace(/ /g, '');
+					data[newKey] = v;
+				});
 
 				this.resultsEl.append( this.listTemplate(data) );
 			}, this);
