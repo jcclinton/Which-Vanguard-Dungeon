@@ -5,13 +5,11 @@
 		;
 
 
+
 	Backbone.sync = $.noop;
 
 
-	myModel = Backbone.Model.extend({
-		initialize: function(){
-		}
-	});
+	myModel = Backbone.Model.extend({});
 
 	collection = new (Backbone.Collection.extend({
 		model: myModel,
@@ -19,26 +17,33 @@
 		url: '',
 
 		createView: function(model){
-
 			model.view = new inputView({model: model});
-
-			$('#cms-list').append(model.view.render().el);
-		},
+		}
 	}))();
 
 
 	inputView = Backbone.View.extend({
-		tagName: "div",
-		className: 'view-display',
+		el: $('#input'),
 
 		events: {
 			"click .find-dungeon": "choose"
 		},
 
 		initialize: function(){
+			var el = $('#select-template')
+				, html = el.html()
+				;
+
+			this.template = _.template( html );
+			this.render();
 		},
 
 		render: function(){
+			var data = {}
+				;
+
+			data.low = 1;
+			/*
 			var data
 				, object = this.model.get('object')
 				, template
@@ -59,8 +64,9 @@
 			data.object = indent( JSON.stringify(object) );
 
 			data.dbType = this.model.get('dbType');
+*/
 
-			$(this.el).html(template(data));
+			$(this.el).html(this.template(data));
 			return this;
 
 			function indent(str){
@@ -79,5 +85,16 @@
 		}
 
 	});
+
+
+	(function(){
+		var model
+			, config = {}
+			;
+
+			model = new myModel(config);
+			collection.createView(model);
+			collection.add(model);
+	}());
 
 }());

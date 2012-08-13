@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Which Dungeon?</title>
+    <title>Vanguard Dungeons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Which Dungeon Should We Run?</a>
+          <a class="brand" href="#">Which Vanguard Dungeon Should We Run?</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -50,16 +50,26 @@
 
       <p>Choose parameters below to get your answer!</p>
 
+			<div id="input"></div>
+
+			<div id="result"></div>
+
     </div> <!-- /container -->
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+	<!-- Templates -->
+
+	<script type="text/template" id="select-template">
+		<input type="text" id="low-range" value="<%= low %>" />
+		<span>Lower Bound on Level</span>
+		<br/>
+	</script>
+
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="external/underscore.js"></script>
 		<script type="text/javascript" src="external/backbone.js"></script>
 
-    <script src="external/bootstrap-transition.js"></script>
+    <!--script src="external/bootstrap-transition.js"></script>
     <script src="external/bootstrap-alert.js"></script>
     <script src="external/bootstrap-modal.js"></script>
     <script src="external/bootstrap-dropdown.js"></script>
@@ -70,9 +80,10 @@
     <script src="external/bootstrap-button.js"></script>
     <script src="external/bootstrap-collapse.js"></script>
     <script src="external/bootstrap-carousel.js"></script>
-    <script src="external/bootstrap-typeahead.js"></script>
+    <script src="external/bootstrap-typeahead.js"></script-->
 
-    <script src="js/dungeons.js"></script>
+    <script type="text/javascript" src="dungeons.json"></script>
+    <script type="text/javascript" src="js/dungeons.js"></script>
 
   </body>
 </html>
