@@ -49,6 +49,7 @@
     <div class="container">
 
       <p>Choose parameters below to get your answer!</p>
+      <p>(target level has precedence if you put a number in that field)</p>
 
 			<div id="input"></div>
 
@@ -59,9 +60,25 @@
 	<!-- Templates -->
 
 	<script type="text/template" id="select-template">
-		<input type="text" id="low-range" value="<%= low %>" />
+		<input type="text" id="target-value" value="<%= target %>" />
+		<span>Target Level</span>
+		<br/>
+
+		OR:
+
+		<br/>
+
+		<input type="text" id="high-value" value="<%= high %>" />
+		<span>High Bound on Level</span>
+		<br/>
+
+		<input type="text" id="low-value" value="<%= low %>" />
 		<span>Lower Bound on Level</span>
 		<br/>
+
+		<button type="button" class="find-dungeon">Choose Random</button>
+		<button type="button" class="list-dungeons">Show Available</button>
+		<div style="clear:both"></div>
 	</script>
 
 

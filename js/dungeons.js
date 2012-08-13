@@ -26,7 +26,8 @@
 		el: $('#input'),
 
 		events: {
-			"click .find-dungeon": "choose"
+			"click .find-dungeon": "random",
+			"click .list-dungeons": "list",
 		},
 
 		initialize: function(){
@@ -34,54 +35,93 @@
 				, html = el.html()
 				;
 
+			this.low = '';
+			this.high = '';
+			this.target = 15;
+
 			this.template = _.template( html );
 			this.render();
+
+			this.lowEl = $('#low-value', '#input');
+			this.highEl = $('#high-value', '#input');
+			this.targetEl = $('#target-value', '#input');
 		},
 
 		render: function(){
 			var data = {}
 				;
 
-			data.low = 1;
-			/*
-			var data
-				, object = this.model.get('object')
-				, template
-				;
+			data.low = this.low;
+			data.target = this.target;
+			data.high = this.high;
 
-			template = _.template($('#'+viewType+'-object-template').html())
-
-			data = {
-				id: this.model.get('id')
-			};
-
-			data.pageType = pageType;
-
-			if(bookName){
-				data.bookName = bookName;
-			}
-
-			data.object = indent( JSON.stringify(object) );
-
-			data.dbType = this.model.get('dbType');
-*/
 
 			$(this.el).html(this.template(data));
 			return this;
+		},
+		
+		parseInput: function(){
+			var target = this.targetEl.val() | 0
+				, high = this.highEl.val() | 0
+				, low = this.lowEl.val() | 0
+				;
 
-			function indent(str){
-				if(!str) return;
-
-				str = str.replace(/{/g, '<div style="margin-left: 20px;">');
-				str = str.replace(/}/g, '</div>');
-				str = str.replace(/\[/g, '<div style="margin-left: 20px;">');
-				str = str.replace(/\]/g, '</div>');
-				str = str.replace(/,/g, '<br/>');
-				return str;
+			if(target){
+				this.targetEl.val( target );
+				this.highEl.val( '' );
+				this.lowEl.val( '' );
+				return {target: target};
 			}
+
+			if( !high || !low){
+				return false;
+			}
+
+			this.targetEl.val( '' );
+			this.highEl.val( high );
+			this.lowEl.val( low );
+			return {high: high, low: low};
 		},
 
-		choose: function(){
+		getApplicableList: function( input ){
+			if(input.target){
+				return searchByTarget(input.target);
+			}else if(input.high && input.low){
+				return searchByRange(input.high, input.low);
+			}
+
+			return [];
+		},
+
+		renderList: function(list){
+		},
+
+		random: function(){
+			var list
+				, data
+				, index
+				, value
+				;
+				
+			data = this.parseInput();
+			list = this.getApplicableList( data );
+
+
+			index = Math.floor( Math.random() * list.length );
+			value = list[index];
+
+			this.renderList([value]);
+		},
+
+		list: function(){
+			var list
+				, data
+				;
+				
+			data = this.parseInput();
+			list = this.getApplicableList( data );
+
+			this.renderList( list );
 		}
 
 	});
@@ -96,5 +136,22 @@
 			collection.createView(model);
 			collection.add(model);
 	}());
+
+
+	function searchByTarget(target){
+		var list = _.filter(dungeonList, function(d){
+			return target >= d.Low && target <= d.High;
+		});
+
+		return list;
+	}
+
+	function searchByRange(high, low){
+		var list = _.filter(dungeonList, function(d){
+			return low >= d.Low && high <= d.High;
+		});
+
+		return list;
+	}
 
 }());
