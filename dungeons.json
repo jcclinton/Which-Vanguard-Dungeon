@@ -252,9 +252,9 @@ var dungeonList = [
     "Scope": "Group"
   },
   {
-    "Low": "11",
-    "High": "18",
-    "Avg": "15",
+    "Low": "50",
+    "High": "55",
+    "Avg": "53",
     "Dungeon Name": "Magi Hold",
     "Chunk Name": "Magi Hold",
     "Continent": "Kojan",
@@ -621,9 +621,9 @@ var dungeonList = [
     "Scope": "Group"
   },
   {
-    "Low": "37",
-    "High": "41",
-    "Avg": "39",
+    "Low": "52",
+    "High": "55",
+    "Avg": "54",
     "Dungeon Name": "Lair of the Vi'Rak",
     "Chunk Name": "Ruins of Vol Tuniel",
     "Continent": "Thestra",
